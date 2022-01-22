@@ -7,15 +7,16 @@ export const Btn = styled.button`
   cursor: pointer;
   border: none;
   width: 260px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   border-radius: 50px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-family: "gotham";
+  font-weight: 500;
 `
 
 function PrimaryBtn() {
-  return <Btn>Order Now</Btn>
+  return <Btn>Custom Order</Btn>
 }
 
 export default PrimaryBtn

@@ -6,16 +6,21 @@ export const HeaderContainer = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 `
 
 export const Header = styled.div`
   padding-bottom: 1rem;
   height: 100vh;
+  scroll-snap-align: start;
   width: 100%;
   display: flex;
+
   flex-direction: column;
-  background: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/676da95d-942e-414c-8534-f1832f0d4ced/bvlatuR/std/3296x1798/ms-homepage-desktop")
-    no-repeat center center;
+  background: url("${props => props.url}") no-repeat center center;
+  /* background: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/676da95d-942e-414c-8534-f1832f0d4ced/bvlatuR/std/3296x1798/ms-homepage-desktop")
+    no-repeat center center; */
   background-size: cover;
   .content {
     display: flex;
@@ -31,6 +36,7 @@ export const Header = styled.div`
     color: #393c41;
     font-weight: 500;
     font-size: 40px;
+    font-family: "gotham", Arial, Helvetica, sans-serif;
   }
   h2,
   h4 {
@@ -40,17 +46,48 @@ export const Header = styled.div`
     padding-top: 8px;
     font-weight: 300;
     font-size: 15px;
-    color: #5c5e62;
+    color: rgb(92, 93, 97);
+    font-family: "Gbook", Arial, Helvetica, sans-serif;
+    font-weight: 700;
     span {
       padding-bottom: 4px;
       padding-top: 15px;
-      border-bottom: 1px solid black;
+      /* border-bottom: 1px solid black; */
       color: #393c41;
       cursor: pointer;
+      position: relative;
       transition: 0.5s ease-in-out;
-      &:hover {
-        border-bottom-width: 2px;
+      &::after {
+        background-color: red;
+        height: 50px;
+        width: 50px;
+        content: "";
+        bottom: 0;
+        left: 0;
+        display: block;
+        position: relative;
         color: black;
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: rgb(92, 93, 97);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        transition: height 0.3s ease-in;
+        width: 100%;
+        left: 0;
+        /* content: "xhh"; */
+      }
+
+      &:hover:after {
+        background: #393c41;
+        height: 2.5px;
+      }
+      &:hover {
+        color: #393c41;
       }
     }
   }

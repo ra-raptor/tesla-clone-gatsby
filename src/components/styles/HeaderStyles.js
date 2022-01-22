@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   overflow-y: scroll;
 `
 

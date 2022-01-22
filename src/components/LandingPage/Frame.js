@@ -1,34 +1,58 @@
-import React, { createRef } from "react"
+import React, { createRef, useEffect } from "react"
 import { Header, HeaderContainer } from "../styles/HeaderStyles"
 import PrimaryBtn from "./PrimaryBtn"
 import ScrollDownSVG from "./ScrollDownSVG"
 import SecondaryBtn from "./SecondaryBtn"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import Footer from "./Footer"
 
 function Frame({ url, title, ind }) {
-  console.log(ind)
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  })
+  const animation = useAnimation()
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        transition: { type: "spring", delay: 0, duration: 0.2, bounce: 0.1 },
+      })
+    }
+    if (!inView) {
+      animation.start({ opacity: 0.0 })
+    }
+    console.log(inView)
+  }, [inView, animation])
+
+  let subtext
+  if (ind < 5) {
+    subtext = (
+      <h4>
+        Order Online for <span>Touchless Delivery</span>
+      </h4>
+    )
+  } else if (ind == 5) {
+    subtext = <h4>Lowest Cost Solar Panels in India</h4>
+  } else if (ind == 6) {
+    subtext = <h4>Produce Clean Energy From Your Roof</h4>
+  } else {
+    subtext = ""
+  }
   return (
     <Header url={url}>
-      <div className="text">
+      <motion.div className="text" animate={animation}>
         <h2>{title}</h2>
         <h4></h4>
-        <h4>
-          Order Online for <span>Touchless Delivery</span>
-        </h4>
-      </div>
-      <div className="cta">
-        <PrimaryBtn />
-        <SecondaryBtn />
-      </div>
+        {subtext}
+      </motion.div>
+        
+      <motion.div animate={animation} ref={ref} className="cta">
+        <PrimaryBtn txt={ind < 5 ? "Custom Order" : "Order now"} />
+        <SecondaryBtn txt={ind < 5 ? "EXISTING INVENTORY" : "learn more"} />
+      </motion.div>
       {ind == 1 ? <ScrollDownSVG /> : ""}
-      {ind == 7 ? (
-        <ul className="footer_ul">
-          <li>Tesla © 2021</li>
-          <li>Privacy & Legal</li>
-          <li>News</li>
-        </ul>
-      ) : (
-        ""
-      )}
+      {ind == 7 ? <Footer /> : ""}
     </Header>
   )
 }

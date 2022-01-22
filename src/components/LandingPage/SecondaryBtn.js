@@ -9,8 +9,8 @@ const SecBtn = styled(Btn)`
   font-weight: 500;
 `
 
-function SecondaryBtn() {
-  return <SecBtn>EXISTING INVENTORY</SecBtn>
+function SecondaryBtn({ txt }) {
+  return <SecBtn>{txt}</SecBtn>
 }
 
 export default SecondaryBtn

@@ -15,8 +15,8 @@ export const Btn = styled.button`
   font-weight: 500;
 `
 
-function PrimaryBtn() {
-  return <Btn>Custom Order</Btn>
+function PrimaryBtn({ txt }) {
+  return <Btn>{txt}</Btn>
 }
 
 export default PrimaryBtn

@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
+    "framer-motion": "^6.2.1",
     "gatsby": "^4.1.0",
     "gatsby-plugin-emotion": "^7.1.0",
     "gatsby-plugin-gatsby-cloud": "^4.1.0",
@@ -21,7 +22,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-full-page": "^0.1.12",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^8.33.1"
   },
   "devDependencies": {
     "prettier": "^2.4.1"

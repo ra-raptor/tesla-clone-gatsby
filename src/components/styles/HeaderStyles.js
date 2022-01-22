@@ -4,18 +4,23 @@ import { css } from "@emotion/react"
 export const HeaderContainer = styled.div`
   height: 100vh;
   width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: green;
   /* scroll-snap-type: y mandatory; */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  .slidewidth {
+  }
 `
 
 export const Header = styled.div`
   padding-bottom: 1rem;
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   width: 100%;
   display: flex;
+  max-width: 100%;
 
   flex-direction: column;
   background: url("${props => props.url}") no-repeat center center;
@@ -43,12 +48,12 @@ export const Header = styled.div`
     text-align: center;
   }
   h4 {
-    padding-top: 8px;
+    padding-top: 4px;
     font-weight: 300;
-    font-size: 15px;
-    color: rgb(92, 93, 97);
-    font-family: "Gbook", Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-size: 14px;
+    color: rgb(102, 103, 107);
+    font-family: "Gotham", Arial, Helvetica, sans-serif;
+    font-weight: 300;
     span {
       padding-bottom: 4px;
       padding-top: 15px;

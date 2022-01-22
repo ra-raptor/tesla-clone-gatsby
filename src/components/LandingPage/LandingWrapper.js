@@ -12,8 +12,8 @@ function LandingWrapper() {
   }
   return (
     <HeaderContainer>
-      <FullPage ref={sliderRef}>
-        <Slide>
+      <FullPage className="slidewidth" ref={sliderRef}>
+        <Slide className="slidewidth">
           <Header url="https://tesla-cdn.thron.com/delivery/public/image/tesla/e90a341e-f9ca-4aa1-8eab-94afea118786/bvlatuR/std/2880x1800/M3-Homepage-D">
             <div className="text">
               <h2> Model 3</h2>
@@ -117,15 +117,14 @@ function LandingWrapper() {
               <PrimaryBtn />
               <SecondaryBtn />
             </div>
+            <ul className="footer_ul">
+              <li>Tesla © 2021</li>
+              <li>Privacy & Legal</li>
+              <li>News</li>
+            </ul>
           </Header>
         </Slide>
       </FullPage>
-
-      <ul className="footer_ul">
-        <li>Tesla © 2021</li>
-        <li>Privacy & Legal</li>
-        <li>News</li>
-      </ul>
     </HeaderContainer>
   )
 }

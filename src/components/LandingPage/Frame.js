@@ -6,6 +6,7 @@ import SecondaryBtn from "./SecondaryBtn"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Footer from "./Footer"
+import FooterButton from "./FooterButton"
 
 function Frame({ url, title, ind }) {
   const { ref, inView } = useInView({
@@ -46,10 +47,19 @@ function Frame({ url, title, ind }) {
         <h4></h4>
         {subtext}
       </motion.div>
-        
+
       <motion.div animate={animation} ref={ref} className="cta">
-        <PrimaryBtn txt={ind < 5 ? "Custom Order" : "Order now"} />
-        <SecondaryBtn txt={ind < 5 ? "EXISTING INVENTORY" : "learn more"} />
+        {ind == 7 ? <FooterButton /> : ""}
+        {ind != 7 ? (
+          <PrimaryBtn txt={ind < 5 ? "Custom Order" : "Order now"} />
+        ) : (
+          ""
+        )}
+        {ind != 7 ? (
+          <SecondaryBtn txt={ind < 5 ? "EXISTING INVENTORY" : "learn more"} />
+        ) : (
+          ""
+        )}
       </motion.div>
       {ind == 1 ? <ScrollDownSVG /> : ""}
       {ind == 7 ? <Footer /> : ""}

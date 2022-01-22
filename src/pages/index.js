@@ -1,10 +1,16 @@
-import * as React from "react"
+import React, { createRef } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import LandingWrapper from "../components/LandingPage/LandingWrapper"
+import NavBar from "../components/NavBar/NavBar"
+
+const sliderRef = createRef()
+const slideTo = i => {
+  sliderRef.current.scrollToSlide(i)
+}
 
 const IndexPage = () => (
   <Layout>
@@ -20,7 +26,8 @@ const IndexPage = () => (
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem` }}
     /> */}
-    <LandingWrapper />
+    <NavBar slideTo={slideTo} />
+    <LandingWrapper sliderRef={sliderRef} />
     {/* <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />

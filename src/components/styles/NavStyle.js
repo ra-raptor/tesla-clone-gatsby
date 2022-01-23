@@ -22,31 +22,40 @@ export const NavHeader = styled.div`
 
 export const NavLinks = styled.div`
   display: flex;
-  gap: 18px;
+  /* gap: 18px; */
+  /* background-color: blue; */
   a {
+    width: 110px;
+    text-align: center;
     text-decoration: none;
     text-transform: capitalize;
+    /* background-color: red; */
     color: #222;
     font-weight: 500;
     font-size: 14px;
     font-family: "Gotham", Arial, Helvetica, sans-serif;
   }
   #hover {
-    width: 70px;
+    width: 110px;
+    border-radius: 10px;
     height: 30px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(100, 100, 100, 0.08);
     backdrop-filter: blur(1px);
     position: absolute;
     z-index: -1;
-    transform: translate(-20%, -50%);
+    /* transform: translate(-20%, -60%); */
   }
 `
 
 export const NavRight = styled.div`
   display: flex;
   align-items: center;
-  gap: 18px;
+  /* background: red; */
+  /* gap: 18px; */
   a {
+    text-align: center;
+    /* background: blue; */
+    width: 80px;
     text-decoration: none;
     text-transform: capitalize;
     color: #222;
@@ -55,5 +64,15 @@ export const NavRight = styled.div`
     z-index: 0;
     position: relative;
     font-family: "Gotham", Arial, Helvetica, sans-serif;
+  }
+  #hover2 {
+    width: 80px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: rgba(100, 100, 100, 0.08);
+    backdrop-filter: blur(1px);
+    position: absolute;
+    z-index: -1;
+    /* transform: translate(-20%, -60%); */
   }
 `

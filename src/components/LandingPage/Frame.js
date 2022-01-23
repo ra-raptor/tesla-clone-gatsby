@@ -1,5 +1,5 @@
-import React, { createRef, useEffect } from "react"
-import { Header, HeaderContainer } from "../styles/HeaderStyles"
+import React, { useEffect } from "react"
+import { Header } from "../styles/HeaderStyles"
 import PrimaryBtn from "./PrimaryBtn"
 import ScrollDownSVG from "./ScrollDownSVG"
 import SecondaryBtn from "./SecondaryBtn"
@@ -33,9 +33,9 @@ function Frame({ url, title, ind }) {
         Order Online for <span>Touchless Delivery</span>
       </h4>
     )
-  } else if (ind == 5) {
+  } else if (ind === 5) {
     subtext = <h4>Lowest Cost Solar Panels in India</h4>
-  } else if (ind == 6) {
+  } else if (ind === 6) {
     subtext = <h4>Produce Clean Energy From Your Roof</h4>
   } else {
     subtext = ""
@@ -44,25 +44,25 @@ function Frame({ url, title, ind }) {
     <Header url={url}>
       <motion.div className="text" animate={animation}>
         <h2>{title}</h2>
-        <h4></h4>
+        {/* <h4></h4> */}
         {subtext}
       </motion.div>
 
       <motion.div animate={animation} ref={ref} className="cta">
-        {ind == 7 ? <FooterButton /> : ""}
-        {ind != 7 ? (
+        {ind === 7 ? <FooterButton /> : ""}
+        {ind !== 7 ? (
           <PrimaryBtn txt={ind < 5 ? "Custom Order" : "Order now"} />
         ) : (
           ""
         )}
-        {ind != 7 ? (
+        {ind !== 7 ? (
           <SecondaryBtn txt={ind < 5 ? "EXISTING INVENTORY" : "learn more"} />
         ) : (
           ""
         )}
       </motion.div>
-      {ind == 1 ? <ScrollDownSVG /> : ""}
-      {ind == 7 ? <Footer /> : ""}
+      {ind === 1 ? <ScrollDownSVG /> : ""}
+      {ind === 7 ? <Footer /> : ""}
     </Header>
   )
 }

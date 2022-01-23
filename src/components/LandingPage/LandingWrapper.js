@@ -1,8 +1,5 @@
-import React, { createRef } from "react"
-import { Header, HeaderContainer } from "../styles/HeaderStyles"
-import PrimaryBtn from "./PrimaryBtn"
-import ScrollDownSVG from "./ScrollDownSVG"
-import SecondaryBtn from "./SecondaryBtn"
+import React from "react"
+import { HeaderContainer } from "../styles/HeaderStyles"
 import { FullPage, Slide } from "react-full-page"
 import Frame from "./Frame"
 

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 
 export const HeaderContainer = styled.div`
   height: 100vh;

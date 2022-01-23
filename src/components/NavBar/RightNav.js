@@ -30,10 +30,10 @@ function RightNav() {
         transition={{ duration: 0.3, ease: "easeIn" }}
       ></motion.div>
       <Link onMouseOver={() => setactivehover(0)} to="/">
-        Shop
+        Signup
       </Link>
-      <Link onMouseOver={() => setactivehover(1)} to="/">
-        Account
+      <Link onMouseOver={() => setactivehover(1)} to="/login">
+        Login
       </Link>
       <Link onMouseOver={() => setactivehover(2)} to="/">
         Menu

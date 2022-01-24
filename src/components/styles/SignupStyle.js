@@ -5,11 +5,15 @@ export const SignupWrapper = styled.div`
   padding: 25px;
   padding-top: 5px;
   min-height: 100vh;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
   box-sizing: border-box;
   font-family: "Gotham", Arial, Helvetica, sans-serif;
+  .secondary {
+    margin-bottom: 60px;
+  }
 `
 
 export const SignupMain = styled.div`
@@ -71,4 +75,32 @@ export const SignupFooter = styled.ul`
   }
   /* left: 50%; */
   /* transform: translateX(-50%); */
+`
+
+export const SignupAgree = styled.div`
+  max-width: 350px;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  margin-top: 12px;
+  font-weight: 200;
+  color: hsl(0, 0%, 30%);
+  font-size: 0.9rem;
+  text-align: justify;
+`
+export const SignupDivide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  align-items: center;
+  hr {
+    height: 0;
+    width: 40%;
+    opacity: 0.3;
+  }
+  span {
+    font-weight: 500;
+    color: #5c5e62;
+  }
 `

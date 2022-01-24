@@ -1,20 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Link } from "gatsby"
 import PrimaryButton from "../components/Login/PrimaryButton"
 import ButtonSecondary from "../components/Login/ButtonSecondary"
-import { GrLanguage } from "react-icons/gr"
+import { MdInfo } from "react-icons/md"
 import LoginNav from "../components/Login/LoginNav"
-import { LoginWrapper, LoginForm } from "../components/styles/LoginStyle"
 import {
   SignupWrapper,
   SignupMain,
   SignupForm,
   SignupFooter,
+  SignupAgree,
+  SignupDivide,
 } from "../components/styles/SignupStyle"
+import { Tooltip, Checkbox } from "@mui/material"
+import ReCAPTCHA from "react-google-recaptcha"
 
-export default function signup() {
+const passwordvalid = (
+  <div
+    style={{
+      maxWidth: "220px",
+      fontSize: "12px",
+      padding: "5px",
+      fontWeight: "400",
+    }}
+  >
+    Please enter a valid password that has a minimum of eight characters.
+    Password must have at least one number and one letter.
+  </div>
+)
+
+export default function Signup() {
+  const [termsChecked, settermsChecked] = useState(0)
+  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("")
+  const [captchaVerified, setcaptchaVerified] = useState(false)
+  console.log(captchaVerified)
+  const handleCaptcha = value => {
+    setcaptchaVerified(true)
+  }
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
   return (
     <Layout>
       <Seo title="Signup" />
@@ -22,7 +50,7 @@ export default function signup() {
         <LoginNav />
         <SignupMain>
           <h1>Create Account</h1>
-          <SignupForm /*onSubmit={signIn}*/>
+          <SignupForm onSubmit={handleSubmit}>
             <label htmlFor="">First Name</label>
             <input type="text" />
             <label htmlFor="">Last Name</label>
@@ -31,49 +59,48 @@ export default function signup() {
             <input
               type="email"
               id="email"
-              //value={email}
-              //onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               name="email"
             />
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <label htmlFor="password">Password</label>
-              {/* <Tooltip title={passwordvalid}>
+
+              <Tooltip title={passwordvalid}>
                 <span aria-label="Delete">
-                  <InfoRounded
-                    style={{  color: "#3E6AE1" }}
-                  />
+                  <MdInfo style={{ color: "#3E6AE1" }} />
                 </span>
-              </Tooltip> */}
+              </Tooltip>
             </div>
             <input
               type="password"
               name="password"
               id="password"
-              //value={password}
-              //onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
-            <div className="signup-agree">
-              {/* <Checkbox
+            <SignupAgree>
+              <Checkbox
                 checked={termsChecked}
                 onChange={() => settermsChecked(!termsChecked)}
                 color="primary"
                 inputProps={{ "aria-label": "secondary checkbox" }}
-              /> */}
-              {/* <div>
+              />
+              <div>
                 By creating a Tesla Account, I understand and agree to Tesla's
                 Privacy Notice and Terms of Use ( Required )
-              </div> */}
-            </div>
-            <div className="signup-agree">
-              {/* <Checkbox
+              </div>
+            </SignupAgree>
+            <SignupAgree>
+              <Checkbox
                 defaultChecked
                 color="primary"
                 inputProps={{ "aria-label": "secondary checkbox" }}
-              /> */}
+              />
               <div>
                 Send me updates from Tesla <br />( Optional )
               </div>
-            </div>
+            </SignupAgree>
             <div
               style={{
                 display: "grid",
@@ -83,20 +110,22 @@ export default function signup() {
                 marginTop: "10px",
               }}
             >
-              {/* <ReCAPTCHA
+              <ReCAPTCHA
                 sitekey="6Lcu2bwbAAAAAHiWgzP1bKWsLfd5mM_8GhrMMckM"
-                onChange={onChange}
-              /> */}
+                onChange={handleCaptcha}
+              />
             </div>
-            {/* <ButtonPrimary name="CREATE ACCOUNT" type="submit" /> */}
+            <PrimaryButton name="CREATE ACCOUNT" type="submit" />
           </SignupForm>
 
-          <div className="signup__divider">
+          <SignupDivide>
             <hr />
             <span>OR</span>
             <hr />
-          </div>
-          <Link to="/login">{/* <ButtonSecondary name="SIGN IN" /> */}</Link>
+          </SignupDivide>
+          <Link className="secondary" to="/login">
+            <ButtonSecondary name="SIGN IN" />
+          </Link>
         </SignupMain>
         <SignupFooter>
           <li>Tesla © 2021</li>

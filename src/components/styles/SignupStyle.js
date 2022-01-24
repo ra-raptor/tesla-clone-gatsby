@@ -29,6 +29,9 @@ export const SignupMain = styled.div`
     margin-left: -20%;
     margin-bottom: 10px;
     color: hsl(0, 0%, 20%);
+    @media (max-width: 600px) {
+      margin-left: 0%;
+    }
   }
 `
 

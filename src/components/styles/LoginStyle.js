@@ -46,6 +46,15 @@ export const LoginFooter = styled(StyledFooter)`
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  @media (max-width: 600px) {
+    /* background: red; */
+    li {
+      min-width: 80px;
+      padding-right: 1px;
+      padding-left: 1px;
+      font-size: 0.8rem;
+    }
+  }
 `
 
 export const LoginMain = styled.div`

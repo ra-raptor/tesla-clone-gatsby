@@ -45,6 +45,9 @@ export const NavLinks = styled.div`
     z-index: -1;
     /* transform: translate(-20%, -60%); */
   }
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `
 
 export const NavRight = styled.div`
@@ -74,5 +77,8 @@ export const NavRight = styled.div`
     position: absolute;
     z-index: -1;
     /* transform: translate(-20%, -60%); */
+  }
+  @media (max-width: 600px) {
+    display: none;
   }
 `

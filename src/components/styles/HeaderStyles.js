@@ -103,5 +103,9 @@ export const Header = styled.div`
     width: 100%;
     justify-content: center;
     gap: 20px;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `

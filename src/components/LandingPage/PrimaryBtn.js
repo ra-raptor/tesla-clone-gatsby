@@ -13,6 +13,9 @@ export const Btn = styled.button`
   text-transform: uppercase;
   font-family: "gotham";
   font-weight: 500;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `
 
 function PrimaryBtn({ txt }) {

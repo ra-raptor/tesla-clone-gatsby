@@ -7,6 +7,9 @@ const SecBtn = styled(Btn)`
   color: rgba(23, 26, 32, 0.8);
   font-family: "gotham";
   font-weight: 500;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `
 
 function SecondaryBtn({ txt }) {

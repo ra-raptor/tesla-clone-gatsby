@@ -1,6 +1,6 @@
-import React from "react"
+import React, { ReactP } from "react"
 import { Link } from "gatsby"
-import { NavHeader, NavMenuBtn } from "../styles/NavStyle"
+import { NavHeader, NavMenuBtn, FullPageBlur } from "../styles/NavStyle"
 import CentralNav from "./CentralNav"
 import RightNav from "./RightNav"
 import { useMediaQuery } from "react-responsive"
@@ -28,6 +28,7 @@ function NavBar({ slideTo }) {
         <CentralNav slideTo={slideTo} />
         <RightNav />
         {isNotDesktop && <NavMenu />}
+        <FullPageBlur open={true}></FullPageBlur>
         {/* <div className="header__right">
           <Link to="/shop" className={isMenuOpen && "header__link--hidden"}>
             Shop

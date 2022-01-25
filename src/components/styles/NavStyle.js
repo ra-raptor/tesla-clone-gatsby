@@ -98,3 +98,14 @@ export const NavMenuBtn = styled.div`
     background-color: rgba(100, 100, 100, 0.2);
   }
 `
+
+export const FullPageBlur = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+`

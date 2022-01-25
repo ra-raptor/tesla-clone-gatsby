@@ -82,3 +82,19 @@ export const NavRight = styled.div`
     display: none;
   }
 `
+
+export const NavMenuBtn = styled.div`
+  background-color: rgba(100, 100, 100, 0.08);
+  backdrop-filter: blur(1px);
+  font-family: "Gotham", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  padding: 8px 12px;
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  left: 15px;
+  &:hover {
+    background-color: rgba(100, 100, 100, 0.2);
+  }
+`

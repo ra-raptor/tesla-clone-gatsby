@@ -1,9 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-import { NavHeader } from "../styles/NavStyle"
+import { NavHeader, NavMenuBtn } from "../styles/NavStyle"
 import CentralNav from "./CentralNav"
 import RightNav from "./RightNav"
+import { useMediaQuery } from "react-responsive"
+
+const NavMenu = () => {
+  return <NavMenuBtn>Menu</NavMenuBtn>
+}
+
 function NavBar({ slideTo }) {
+  const isNotDesktop = useMediaQuery({
+    query: "(max-width:600px)",
+  })
   return (
     <div>
       <NavHeader>
@@ -18,6 +27,7 @@ function NavBar({ slideTo }) {
         </div>
         <CentralNav slideTo={slideTo} />
         <RightNav />
+        {isNotDesktop && <NavMenu />}
         {/* <div className="header__right">
           <Link to="/shop" className={isMenuOpen && "header__link--hidden"}>
             Shop

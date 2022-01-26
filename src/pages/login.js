@@ -8,7 +8,7 @@ import LoginBody from "../components/Login/LoginBody"
 function login() {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Lgoin" />
       <LoginWrapper>
         <LoginNav />
         <LoginBody />

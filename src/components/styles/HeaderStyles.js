@@ -6,10 +6,13 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: green;
+  /* background-color: green; */
   /* scroll-snap-type: y mandatory; */
   /* overflow-y: scroll; */
   .slidewidth {
+  }
+  @media (max-width: 600px) {
+    padding-bottom: 2rem;
   }
 `
 
@@ -104,8 +107,13 @@ export const Header = styled.div`
     justify-content: center;
     gap: 20px;
     @media (max-width: 600px) {
+      padding: 0px 10px;
       flex-direction: column;
       align-items: center;
+      padding-bottom: 2rem;
     }
+  }
+  @media (max-width: 600px) {
+    padding-bottom: 2rem;
   }
 `

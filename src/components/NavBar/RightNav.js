@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { Link } from "gatsby"
 import { NavRight } from "../styles/NavStyle"
 import { motion } from "framer-motion"
+import { SidebarContext } from "../../context/SidebarContextProvider"
 
 function RightNav() {
+  const { setisOpen } = useContext(SidebarContext)
   const [activehover, setactivehover] = useState(0)
   const [ishover, setishover] = useState(0)
   const [hovx, sethovx] = useState(0)
@@ -35,7 +37,12 @@ function RightNav() {
       <Link onMouseOver={() => setactivehover(1)} to="/login">
         Login
       </Link>
-      <Link onMouseOver={() => setactivehover(2)} to="/">
+      <Link
+        role="button"
+        onMouseOver={() => setactivehover(2)}
+        to="/"
+        onClick={() => setisOpen(true)}
+      >
         Menu
       </Link>
     </NavRight>

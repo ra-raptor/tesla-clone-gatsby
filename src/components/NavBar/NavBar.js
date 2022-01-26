@@ -1,14 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 // import { createPortal } from "react-dom"
 import { Link } from "gatsby"
 import { NavHeader, NavMenuBtn } from "../styles/NavStyle"
 import CentralNav from "./CentralNav"
 import RightNav from "./RightNav"
 import { useMediaQuery } from "react-responsive"
+import { SidebarContext } from "../../context/SidebarContextProvider"
 // import Sidebar from "./Sidebar"
 
 const NavMenu = () => {
-  return <NavMenuBtn>Menu</NavMenuBtn>
+  const { setisOpen } = useContext(SidebarContext)
+  return <NavMenuBtn onClick={() => setisOpen(true)}>Menu</NavMenuBtn>
 }
 
 function NavBar({ slideTo }) {

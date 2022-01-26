@@ -119,7 +119,7 @@ export const Menu = styled.div`
   height: 100vh;
   background-color: #fff;
   z-index: 20;
-  min-width: 295px;
+  /* min-width: 295px; */
   ///////////******* shadow */
   /* overflow-y: scroll; */
   box-shadow: -5px 0 10px #2d343630;
@@ -154,7 +154,7 @@ export const Menu = styled.div`
   }
   .close {
     position: absolute;
-    z-index: 2;
+    z-index: 45;
     cursor: pointer;
     /* border: 1px solid purple; */
     top: 25px;

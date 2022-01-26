@@ -1,6 +1,7 @@
-import React, { ReactP } from "react"
+import React, { useState, useEffect } from "react"
+import { createPortal } from "react-dom"
 import { Link } from "gatsby"
-import { NavHeader, NavMenuBtn, FullPageBlur } from "../styles/NavStyle"
+import { NavHeader, NavMenuBtn /*FullPageBlur */ } from "../styles/NavStyle"
 import CentralNav from "./CentralNav"
 import RightNav from "./RightNav"
 import { useMediaQuery } from "react-responsive"
@@ -10,6 +11,10 @@ const NavMenu = () => {
 }
 
 function NavBar({ slideTo }) {
+  const [renderable, setrenderable] = useState(false)
+  useEffect(() => {
+    setrenderable(true)
+  }, [])
   const isNotDesktop = useMediaQuery({
     query: "(max-width:600px)",
   })
@@ -28,7 +33,9 @@ function NavBar({ slideTo }) {
         <CentralNav slideTo={slideTo} />
         <RightNav />
         {isNotDesktop && <NavMenu />}
-        <FullPageBlur open={true}></FullPageBlur>
+        {/* <FullPageBlur open={true}></FullPageBlur> */}
+        {renderable &&
+          createPortal(<h1>HELLLLLO</h1>, document.getElementById("my-portal"))}
         {/* <div className="header__right">
           <Link to="/shop" className={isMenuOpen && "header__link--hidden"}>
             Shop

@@ -17,6 +17,9 @@ function Sidebar() {
   let blurStyle = {
     display: "none",
   }
+  let crossStyle = {
+    display: "none",
+  }
   let sideStyle = {
     minWidth: 0,
     width: 0,
@@ -30,6 +33,9 @@ function Sidebar() {
       minWidth: 295,
       width: 295,
     }
+    crossStyle = {
+      display: "grid",
+    }
   }
 
   return (
@@ -42,7 +48,7 @@ function Sidebar() {
               <div
                 className="close"
                 onClick={() => setisOpen(!isOpen)}
-                style={blurStyle}
+                style={crossStyle}
               >
                 <MdClose />
               </div>

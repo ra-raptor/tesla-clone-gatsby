@@ -38,7 +38,6 @@ function RightNav() {
         Login
       </Link>
       <Link
-        role="button"
         onMouseOver={() => setactivehover(2)}
         to="/"
         onClick={() => setisOpen(true)}

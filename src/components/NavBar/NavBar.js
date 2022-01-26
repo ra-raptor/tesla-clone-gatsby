@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from "react"
-import { createPortal } from "react-dom"
+import React from "react"
+// import { createPortal } from "react-dom"
 import { Link } from "gatsby"
-import { NavHeader, NavMenuBtn /*FullPageBlur */ } from "../styles/NavStyle"
+import { NavHeader, NavMenuBtn } from "../styles/NavStyle"
 import CentralNav from "./CentralNav"
 import RightNav from "./RightNav"
 import { useMediaQuery } from "react-responsive"
+// import Sidebar from "./Sidebar"
 
 const NavMenu = () => {
   return <NavMenuBtn>Menu</NavMenuBtn>
 }
 
 function NavBar({ slideTo }) {
-  const [renderable, setrenderable] = useState(false)
-  useEffect(() => {
-    setrenderable(true)
-  }, [])
+  // const [renderable, setrenderable] = useState(false)
+  // useEffect(() => {
+  //   setrenderable(true)
+  // }, [])
   const isNotDesktop = useMediaQuery({
     query: "(max-width:600px)",
   })
   return (
-    <div>
+    <>
+      {/* <Sidebar /> */}
+      {/* {renderable &&
+        createPortal(<Sidebar />, document.getElementById("my-portal"))} */}
       <NavHeader>
         <div className="header__logo">
           <Link to="/">
@@ -34,8 +38,7 @@ function NavBar({ slideTo }) {
         <RightNav />
         {isNotDesktop && <NavMenu />}
         {/* <FullPageBlur open={true}></FullPageBlur> */}
-        {renderable &&
-          createPortal(<h1>HELLLLLO</h1>, document.getElementById("my-portal"))}
+
         {/* <div className="header__right">
           <Link to="/shop" className={isMenuOpen && "header__link--hidden"}>
             Shop
@@ -51,7 +54,7 @@ function NavBar({ slideTo }) {
           </div>
         </div> */}
       </NavHeader>
-    </div>
+    </>
   )
 }
 

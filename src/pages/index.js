@@ -1,9 +1,11 @@
 import React, { createRef } from "react"
+// import { createPortal } from "react-dom"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import LandingWrapper from "../components/LandingPage/LandingWrapper"
 import NavBar from "../components/NavBar/NavBar"
+import Sidebar from "../components/NavBar/Sidebar"
 
 const sliderRef = createRef()
 const slideTo = i => {
@@ -24,6 +26,7 @@ const IndexPage = () => (
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem` }}
     /> */}
+    <Sidebar />
     <NavBar slideTo={slideTo} />
     <LandingWrapper sliderRef={sliderRef} />
     {/* <p>
